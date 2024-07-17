@@ -1,5 +1,6 @@
 import { readdir, readFile } from "fs/promises";
 import matter from "gray-matter";
+import NextLink from 'next/link';
 
 type PostMeta = {
     slug: string;
@@ -24,7 +25,6 @@ async function getPosts() {
         return { slug, ...data } as PostMeta;
     });
     
-    console.log(posts);
     return posts;
 }
 
@@ -32,13 +32,18 @@ export default async function Home() {
     const posts = await getPosts();
 
     return (
-        <div>
+        <div className="flex flex-col gap-8">
             {posts.map(post => (
-                <article>
-                    <div>{post.slug}</div>
-                    <div>{post.title}</div>
-                    <div>{new Date(post.publishAt).toLocaleDateString("zh-tw")}</div>
-                </article>
+                <NextLink 
+                    key={post.slug}
+                    className="block py-4" 
+                    href={"/" + post.slug + "/"}
+                >
+                    <article>
+                        <h2 className="text-[26px] font-black">{post.title}</h2>
+                        <div className="text-[13px] text-gray-700 dark:text-gray-300">{new Date(post.publishAt).toLocaleDateString("zh-tw")}</div>
+                    </article>
+                </NextLink>
             ))}
         </div>
     );
