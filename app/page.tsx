@@ -41,7 +41,9 @@ export default async function Home() {
                 >
                     <article>
                         <h2 className="text-[26px] font-black">{post.title}</h2>
-                        <div className="text-[13px] text-gray-700 dark:text-gray-300">{new Date(post.publishAt).toLocaleDateString("zh-tw")}</div>
+                        <span className="block text-[13px] text-gray-700 dark:text-gray-300">
+                            {new Date(post.publishAt).toLocaleDateString("en-CA")}
+                        </span>
                     </article>
                 </NextLink>
             ))}

@@ -1,0 +1,56 @@
+.markdown {
+    line-height: 1.8;
+}
+
+.markdown h1 {
+    @apply pt-4 pb-8 text-3xl font-bold;
+}
+
+.markdown h2 {
+    @apply pt-4 pb-8 text-2xl font-bold;
+}
+
+.markdown h3 {
+    @apply pt-4 pb-8 text-xl font-bold;
+}
+
+.markdown h4 {
+    @apply pt-4 pb-8 text-lg font-bold;
+}
+
+.markdown p {
+    @apply pb-8;
+}
+
+.markdown a {
+    @apply border-b border-slate-300/80;
+}
+
+.markdown ul {
+    @apply pb-8 list-disc
+}
+
+.markdown ol {
+    @apply pb-8;
+}
+
+.markdown li {
+    @apply mb-2.5;
+}
+
+.markdown pre {
+    @apply mb-8 p-5 bg-slate-700 text-sm rounded-xl overflow-y-auto;
+    background: rgb(55 54 68);
+}
+
+.markdown :not(pre) > code {
+    @apply rounded;
+
+    background: rgb(65 63 84);
+    color: #f36886;
+    padding: 0.2em 0.5em;
+}
+
+.markdown hr {
+    @apply pb-8 opacity-30;
+}

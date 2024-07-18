@@ -14,9 +14,9 @@ export default async function PostPage({ params }: {
     return (
         <article>
             <h1 className="text-[30px] font-black">{title}</h1>
-            <p className="text-sm">{new Date(publishAt).toLocaleDateString("zh-tw")}</p>
+            <span className="block text-sm">{new Date(publishAt).toLocaleDateString("en-CA")}</span>
 
-            <div className="markdown">
+            <div className="mt-12 markdown">
                 <MDXRemote source={content} />
             </div>
         </article>
